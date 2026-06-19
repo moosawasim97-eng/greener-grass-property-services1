@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials | Greener Grass Property Services</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { padding: 160px 56px 90px; background: var(--forest); position: relative; overflow: hidden; }
+.page-hero-blob { position: absolute; top: -20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,168,106,0.15) 0%, transparent 70%); border-radius: 50%; }
+.page-hero-inner { position: relative; z-index: 1; max-width: 720px; }
+.page-hero h1 { font-size: clamp(48px, 7vw, 88px); color: var(--cream); margin-top: 14px; margin-bottom: 24px; }
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+.page-hero p { font-size: 18px; color: rgba(250,247,239,0.65); max-width: 540px; line-height: 1.85; }
+
+/* Infinite marquee — light variant for this page background */
+.marquee-section { background: var(--forest); padding: 0; overflow: hidden; }
+.marquee-row { padding: 16px 0; }
+
+/* Static grid below */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.t-card { background: white; border-radius: 20px; padding: 36px 32px; box-shadow: var(--shadow-sm); transition: transform 0.3s, box-shadow 0.3s; }
+.t-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.t-stars { font-size: 14px; letter-spacing: 2px; color: #f5a623; margin-bottom: 18px; }
+.t-text { font-size: 15px; color: var(--ink); line-height: 1.8; font-style: italic; margin-bottom: 22px; }
+.t-name { font-size: 13px; font-weight: 700; color: var(--forest); }
+.t-loc { font-size: 11px; color: var(--green); font-weight: 600; margin-top: 3px; letter-spacing: 0.04em; }
+
+.stat-strip { background: var(--green-pale); padding: 64px 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.stat-block { text-align: center; }
+.stat-block-num { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 600; color: var(--forest); line-height: 1; }
+.stat-block-num em { font-style: normal; color: var(--green); }
+.stat-block-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-500); margin-top: 8px; }
+
+.cta-section { background: var(--gold); padding: 90px 56px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; background: rgba(255,255,255,0.12); border-radius: 50%; }
+.cta-text h2 { font-size: clamp(32px, 4.5vw, 56px); color: var(--forest); position: relative; z-index: 1; }
+.cta-actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
+
+@media (max-width: 1024px) {
+  .page-hero { padding: 130px 24px 60px; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: 1fr 1fr; padding: 48px 24px; }
+  .cta-section { padding: 56px 24px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="images/logo.png" alt="Greener Grass Property Services">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="testimonials.html" class="active">Testimonials</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener">Message Us</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener" class="nav-cta">Free Quote</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-blob"></div>
+  <div class="page-hero-inner">
+    <div class="label" style="color:var(--green-light);">Client Words</div>
+    <h1>What Our<br>Customers <em>Say</em></h1>
+    <p>Real feedback from homeowners across Slidell and New Orleans. The reviews speak for themselves.</p>
+  </div>
+</div>
+
+<!-- Infinite scroll -->
+<div class="marquee-section">
+  <div class="marquee-row">
+    <div class="testimonial-marquee-wrap">
+      <div class="testimonial-track" id="track1">
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Ethan and Zion have been mowing our lawn for months now and it has never looked better. Always on time, always thorough."</p><div class="testimonial-name">Marie Thibodeaux</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Hands down the most reliable lawn service we've used. They show up when they say they will and the edging is always razor sharp."</p><div class="testimonial-name">Darnell Pickens</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Had a huge yard cleanup needed after the storm season and they handled it in one visit. Professional and fairly priced."</p><div class="testimonial-name">Renee Fontenot</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Switched to Greener Grass after a bad experience with another company. Night and day difference in quality and communication."</p><div class="testimonial-name">Tobias Reyes</div><div class="testimonial-loc">Mandeville, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Detail oriented is right in the name and they live up to it. Hedges trimmed perfectly every single time."</p><div class="testimonial-name">Brianna Hollis</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Great communication, fair pricing, and the lawn genuinely looks greener since they took over. Highly recommend."</p><div class="testimonial-name">Owen Castille</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Ethan and Zion have been mowing our lawn for months now and it has never looked better. Always on time, always thorough."</p><div class="testimonial-name">Marie Thibodeaux</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Hands down the most reliable lawn service we've used. They show up when they say they will and the edging is always razor sharp."</p><div class="testimonial-name">Darnell Pickens</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Had a huge yard cleanup needed after the storm season and they handled it in one visit. Professional and fairly priced."</p><div class="testimonial-name">Renee Fontenot</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Switched to Greener Grass after a bad experience with another company. Night and day difference in quality and communication."</p><div class="testimonial-name">Tobias Reyes</div><div class="testimonial-loc">Mandeville, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Detail oriented is right in the name and they live up to it. Hedges trimmed perfectly every single time."</p><div class="testimonial-name">Brianna Hollis</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Great communication, fair pricing, and the lawn genuinely looks greener since they took over. Highly recommend."</p><div class="testimonial-name">Owen Castille</div><div class="testimonial-loc">Slidell, LA</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee-row">
+    <div class="testimonial-marquee-wrap">
+      <div class="testimonial-track" id="track2" style="animation-direction:reverse; animation-duration:60s;">
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Booked a one-time cleanup before listing our house and the yard looked incredible for the photos. Quick turnaround too."</p><div class="testimonial-name">Camille Voss</div><div class="testimonial-loc">Covington, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Fair pricing and they never try to upsell things we don't need. Just solid, honest lawn care every two weeks."</p><div class="testimonial-name">Marcus Deal</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Our lawn was a mess after we moved in. Two visits later it looks like a completely different yard. Excellent work."</p><div class="testimonial-name">Priya Nair</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Best part is the consistency. Same crew, same quality, every single visit. That's rare in this industry."</p><div class="testimonial-name">Wesley Trahan</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"They handle our small commercial property and the parking strip has never looked this sharp. Very professional."</p><div class="testimonial-name">Janelle Roussel</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Easy to reach, easy to schedule, and the work speaks for itself. Couldn't ask for a better lawn service."</p><div class="testimonial-name">Andre Bellow</div><div class="testimonial-loc">Mandeville, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Booked a one-time cleanup before listing our house and the yard looked incredible for the photos. Quick turnaround too."</p><div class="testimonial-name">Camille Voss</div><div class="testimonial-loc">Covington, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Fair pricing and they never try to upsell things we don't need. Just solid, honest lawn care every two weeks."</p><div class="testimonial-name">Marcus Deal</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Our lawn was a mess after we moved in. Two visits later it looks like a completely different yard. Excellent work."</p><div class="testimonial-name">Priya Nair</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Best part is the consistency. Same crew, same quality, every single visit. That's rare in this industry."</p><div class="testimonial-name">Wesley Trahan</div><div class="testimonial-loc">Slidell, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"They handle our small commercial property and the parking strip has never looked this sharp. Very professional."</p><div class="testimonial-name">Janelle Roussel</div><div class="testimonial-loc">New Orleans, LA</div></div>
+        <div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">"Easy to reach, easy to schedule, and the work speaks for itself. Couldn't ask for a better lawn service."</p><div class="testimonial-name">Andre Bellow</div><div class="testimonial-loc">Mandeville, LA</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stat-strip">
+  <div class="stat-block reveal"><div class="stat-block-num">100<em>%</em></div><div class="stat-block-label">Locally Owned</div></div>
+  <div class="stat-block reveal reveal-delay-1"><div class="stat-block-num">5<em>.0</em></div><div class="stat-block-label">Avg. Client Rating</div></div>
+  <div class="stat-block reveal reveal-delay-2"><div class="stat-block-num">NOLA</div><div class="stat-block-label">Area Served</div></div>
+  <div class="stat-block reveal reveal-delay-3"><div class="stat-block-num">Free</div><div class="stat-block-label">Quotes, Always</div></div>
+</div>
+
+<section class="section">
+  <div class="section-header">
+    <div class="label">Featured Reviews</div>
+    <h2>The Reviews <em>Speak</em><br>For Themselves</h2>
+  </div>
+  <div class="testimonial-grid">
+    <div class="t-card reveal">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">"Ethan and Zion have been mowing our lawn for months now and it has never looked better. Always on time, always thorough."</p>
+      <div class="t-name">Marie Thibodeaux</div><div class="t-loc">Slidell, LA</div>
+    </div>
+    <div class="t-card reveal reveal-delay-1">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">"Hands down the most reliable lawn service we've used. They show up when they say they will and the edging is always razor sharp."</p>
+      <div class="t-name">Darnell Pickens</div><div class="t-loc">New Orleans, LA</div>
+    </div>
+    <div class="t-card reveal reveal-delay-2">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">"Had a huge yard cleanup needed after the storm season and they handled it in one visit. Professional and fairly priced."</p>
+      <div class="t-name">Renee Fontenot</div><div class="t-loc">Slidell, LA</div>
+    </div>
+    <div class="t-card reveal">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">"Switched to Greener Grass after a bad experience with another company. Night and day difference in quality and communication."</p>
+      <div class="t-name">Tobias Reyes</div><div class="t-loc">Mandeville, LA</div>
+    </div>
+    <div class="t-card reveal reveal-delay-1">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">"Detail oriented is right in the name and they live up to it. Hedges trimmed perfectly every single time."</p>
+      <div class="t-name">Brianna Hollis</div><div class="t-loc">New Orleans, LA</div>
+    </div>
+    <div class="t-card reveal reveal-delay-2">
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="t-text">"Great communication, fair pricing, and the lawn genuinely looks greener since they took over. Highly recommend."</p>
+      <div class="t-name">Owen Castille</div><div class="t-loc">Slidell, LA</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="cta-text"><h2>Want Results<br>Like These?</h2></div>
+  <div class="cta-actions">
+    <a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener" class="btn" style="background:var(--forest);color:var(--cream);padding:16px 34px;border-radius:100px;">Message Us on Facebook</a>
+    <a href="tel:5042203047" class="btn" style="background:rgba(14,40,24,0.1);color:var(--forest);padding:16px 34px;border-radius:100px;border:1.5px solid rgba(14,40,24,0.3);">504-220-3047</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Greener Grass Property Services">
+      <p>Local, reliable, detail-oriented lawn care and landscaping. Owned and operated by Ethan Barton &amp; Zion Barrow, proudly serving Slidell, New Orleans, and surrounding areas.</p>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener">Message Us</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html">Lawn Mowing</a></li><li><a href="services.html">Edging</a></li><li><a href="services.html">Weed Eating</a></li><li><a href="services.html">Hedge Trimming</a></li><li><a href="services.html">Yard Cleanups</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><address>
+      Serving Slidell, New Orleans<br>&amp; Surrounding Areas<br><br>
+      <a href="tel:5042203047">504-220-3047</a><br><br>Call or Text Anytime
+    </address></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Greener Grass Property Services. All rights reserved.</p><p>Slidell &amp; New Orleans, LA</p></div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+function initReveal() { const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 }); document.querySelectorAll('.reveal').forEach(el => obs.observe(el)); }
+document.addEventListener('DOMContentLoaded', initReveal);
+</script>
+</body>
+</html>

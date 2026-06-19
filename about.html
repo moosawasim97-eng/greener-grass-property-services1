@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Greener Grass Property Services</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { padding: 160px 56px 90px; background: var(--forest); position: relative; overflow: hidden; }
+.page-hero-blob { position: absolute; top: -20%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(95,168,106,0.15) 0%, transparent 70%); border-radius: 50%; }
+.page-hero-inner { position: relative; z-index: 1; max-width: 720px; }
+.page-hero h1 { font-size: clamp(48px, 7vw, 88px); color: var(--cream); margin-top: 14px; margin-bottom: 24px; }
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+.page-hero p { font-size: 18px; color: rgba(250,247,239,0.65); max-width: 540px; line-height: 1.85; }
+
+.story-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; background: var(--cream); }
+.story-text { padding: 90px 64px; }
+.story-text h2 { font-size: clamp(32px, 4vw, 50px); margin-bottom: 24px; margin-top: 16px; }
+.story-text h2 em { font-style: italic; color: var(--green); }
+.story-text p { font-size: 16px; line-height: 1.9; margin-bottom: 18px; }
+.story-sidebar { padding: 90px 56px; background: var(--green-pale); display: flex; flex-direction: column; gap: 0; }
+.sidebar-item { padding: 28px 0; border-bottom: 1px solid rgba(14,40,24,0.1); }
+.sidebar-item:first-child { padding-top: 0; }
+.sidebar-item:last-child { border-bottom: none; }
+.sidebar-num { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 600; color: var(--forest); line-height: 1; }
+.sidebar-num em { font-style: normal; color: var(--green); }
+.sidebar-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-500); display: block; margin-top: 6px; margin-bottom: 8px; }
+.sidebar-desc { font-size: 14px; color: var(--grey-500); line-height: 1.7; }
+
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.value-card { background: white; border-radius: 20px; padding: 40px 32px; box-shadow: var(--shadow-sm); }
+.value-card h3 { font-size: 22px; margin-bottom: 14px; }
+.value-card h3 em { font-style: italic; color: var(--green); }
+.value-card p { font-size: 14px; line-height: 1.8; }
+.value-num { font-family: 'Fraunces', serif; font-size: 56px; font-weight: 600; color: var(--green); opacity: 0.25; line-height: 1; margin-bottom: 12px; }
+
+.owner-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+.owner-card { background: white; border-radius: 20px; padding: 40px 36px; box-shadow: var(--shadow-sm); }
+.owner-card h4 { font-size: 20px; margin-bottom: 12px; }
+.owner-card p { font-size: 14px; line-height: 1.8; }
+
+.cta-section { background: var(--gold); padding: 90px 56px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; background: rgba(255,255,255,0.12); border-radius: 50%; }
+.cta-text h2 { font-size: clamp(32px, 4.5vw, 56px); color: var(--forest); position: relative; z-index: 1; }
+.cta-actions { display: flex; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
+
+@media (max-width: 1024px) {
+  .page-hero { padding: 130px 24px 60px; }
+  .story-grid { grid-template-columns: 1fr; }
+  .story-text { padding: 56px 24px; }
+  .story-sidebar { padding: 48px 24px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .owner-row { grid-template-columns: 1fr; }
+  .cta-section { padding: 56px 24px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="images/logo.png" alt="Greener Grass Property Services">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener">Message Us</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener" class="nav-cta">Free Quote</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-blob"></div>
+  <div class="page-hero-inner">
+    <div class="label" style="color:var(--green-light);">About Us</div>
+    <h1>Owned by People<br>Who <em>Care.</em></h1>
+    <p>Greener Grass Property Services is a locally owned and operated lawn care business serving Slidell, New Orleans and the surrounding areas. Reliable, professional, detail oriented — every visit, every time.</p>
+  </div>
+</div>
+
+<div class="story-grid">
+  <div class="story-text">
+    <div class="label">Our Story</div>
+    <h2>Two Locals.<br><em>One Standard.</em></h2>
+    <p>Greener Grass Property Services was founded by Ethan Barton and Zion Barrow, two property professionals who believe lawn care shouldn't be complicated, overpriced, or inconsistent. We started this business because we saw too many homeowners in Slidell and New Orleans dealing with unreliable crews, missed appointments, and sloppy work.</p>
+    <p>Our approach is simple: show up when we say we will, do the job properly every single time, and treat every property like it's our own. That commitment to consistency is what separates a genuinely good lawn care service from a forgettable one.</p>
+    <p>We are proudly local. We know the soil, the grass types, the seasonal patterns, and the climate challenges that come with maintaining a property in southeast Louisiana. That local knowledge means we treat your lawn the right way for this region, not a generic one-size-fits-all approach.</p>
+  </div>
+  <div class="story-sidebar">
+    <div class="sidebar-item reveal">
+      <div class="sidebar-num">100<em>%</em></div>
+      <span class="sidebar-label">Locally Owned</span>
+      <p class="sidebar-desc">Based in the Slidell area, serving our own community.</p>
+    </div>
+    <div class="sidebar-item reveal">
+      <div class="sidebar-num">2</div>
+      <span class="sidebar-label">Dedicated Owners</span>
+      <p class="sidebar-desc">Ethan and Zion are personally involved in every job.</p>
+    </div>
+    <div class="sidebar-item reveal">
+      <div class="sidebar-num">NOLA</div>
+      <span class="sidebar-label">Service Area</span>
+      <p class="sidebar-desc">Slidell, New Orleans, and surrounding areas.</p>
+    </div>
+    <div class="sidebar-item reveal">
+      <div class="sidebar-num">Free</div>
+      <span class="sidebar-label">No-Obligation Quotes</span>
+      <p class="sidebar-desc">Every estimate is free with no pressure to commit.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section section-alt">
+  <div class="section-header">
+    <div class="label">What Drives Us</div>
+    <h2>Reliable. <em>Professional.</em><br>Detail Oriented.</h2>
+    <p>Three words that guide every decision we make and every job we complete.</p>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-num">01</div>
+      <h3>Reliable</h3>
+      <p>You shouldn't have to wonder if your lawn crew is showing up this week. We stick to the schedule, communicate clearly, and follow through on every commitment we make.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-1">
+      <div class="value-num">02</div>
+      <h3>Professional</h3>
+      <p>From the first quote to the final walkthrough, we treat every interaction with care. Clean equipment, courteous crews, and respect for your property at every visit.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-2">
+      <div class="value-num">03</div>
+      <h3>Detail Oriented</h3>
+      <p>Crisp edges, clean lines, thorough cleanups. We don't rush through a job to get to the next one — we take the time to do it right, every single time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <div class="label">Owned & Operated By</div>
+    <h2>Ethan Barton<br><em>& Zion Barrow</em></h2>
+  </div>
+  <div class="owner-row">
+    <div class="owner-card reveal">
+      <h4>Ethan Barton</h4>
+      <p>Co-founder of Greener Grass Property Services, hands-on with day-to-day operations and committed to consistent, dependable lawn care across Slidell and the surrounding region.</p>
+    </div>
+    <div class="owner-card reveal reveal-delay-1">
+      <h4>Zion Barrow</h4>
+      <p>Co-founder of Greener Grass Property Services, focused on quality control and customer relationships — making sure every job meets the standard we set for ourselves.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="cta-text"><h2>Let's Grow Something<br>Great <em>Together.</em></h2></div>
+  <div class="cta-actions">
+    <a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener" class="btn btn-gold">Message Us on Facebook</a>
+    <a href="tel:5042203047" class="btn btn-outline-light" style="color:var(--forest);border-color:rgba(14,40,24,0.3);">504-220-3047</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Greener Grass Property Services">
+      <p>Local, reliable, detail-oriented lawn care and landscaping. Owned and operated by Ethan Barton &amp; Zion Barrow, proudly serving Slidell, New Orleans, and surrounding areas.</p>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="https://www.facebook.com/profile.php?id=61581492654645" target="_blank" rel="noopener">Message Us</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html">Lawn Mowing</a></li><li><a href="services.html">Edging</a></li><li><a href="services.html">Weed Eating</a></li><li><a href="services.html">Hedge Trimming</a></li><li><a href="services.html">Yard Cleanups</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><address>
+      Serving Slidell, New Orleans<br>&amp; Surrounding Areas<br><br>
+      <a href="tel:5042203047">504-220-3047</a><br><br>Call or Text Anytime
+    </address></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 Greener Grass Property Services. All rights reserved.</p><p>Slidell &amp; New Orleans, LA</p></div>
+</footer>
+
+<script>
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+function initReveal() { const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 }); document.querySelectorAll('.reveal').forEach(el => obs.observe(el)); }
+document.addEventListener('DOMContentLoaded', initReveal);
+</script>
+</body>
+</html>
